@@ -1,0 +1,77 @@
+html {
+  font-size: 10px;
+}
+
+.wrapper {
+  width: 90%;
+  border: 1px solid red;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.person-table {
+  min-width: 25%;
+  width: 100%;
+  border-top: 1px solid black;
+  border-collapse: collapse;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+.person-table th {
+  background-color: #e3e6e4;
+}
+
+.person-table th,
+.person-table td {
+  height: 7vh;
+}
+
+.person-table tr td:last-child {
+  min-width: 100px;
+  width: 8%;
+}
+
+.person-table tr td:last-child div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.person-row {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.btn {
+  min-width: 8%;
+  height: 6vh;
+  border: none;
+  border-radius: 5px;
+  background-color: #2962ff;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.btn-redact {
+  width: 40%;
+  height: 3vw;
+  min-height: 35px;
+  border: 2px solid #c8a415;
+  background: url(../../assets/icon-redact-40.png) no-repeat 50% 50% #ffd54f;
+  background-size: contain;
+  margin-right: 5px;
+}
+
+.btn-delete {
+  width: 40%;
+  height: 3vw;
+  min-height: 35px;
+  background-color: #e53935;
+  border: 2px solid #ab000d;
+}
+
+.btn-delete::before {
+  content: 'X';
+  font-size: 200%;
+}

@@ -1,0 +1,26 @@
+<div class='wrapper'>
+  <table class='person-table'>
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class='person-row' *ngFor='let person of persons'>
+        <td>{{person.firstName}}</td>
+        <td>{{person.lastName}}</td>
+        <td>
+          <div>
+            <button class='btn btn-redact'></button>
+            <button class='btn btn-delete'></button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class='btn btn-add' (click)='addPerson()'>Добавить сотрудника</button>
+
+</div>
