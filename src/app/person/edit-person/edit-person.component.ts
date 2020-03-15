@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { ActivatedRoute} from '@angular/router';
 import { HttpService } from '../../service/http.service';
-import { Person } from '../../model/person';
+import { Person } from '../../model/person.model';
 import { AlertService } from 'src/app/service/alert.service';
 
 @Component({
@@ -57,7 +57,7 @@ export class EditPersonComponent implements OnInit {
     console.log(this.curentPerson.id, editForm);
     this.httpService.editData(this.curentPerson.id, editForm)
       .subscribe(data => {
-        this.alertService.success("Редактирование прошло успешно", 5000);
+        this.alertService.success("Редактирование прошло успешно", 3000);
       },
       err => {
         console.log('edit', err.message)

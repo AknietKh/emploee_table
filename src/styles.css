@@ -4,6 +4,7 @@ html {
   box-sizing: border-box;
 }
 
+
 .wrapper {
   width: 90%;
   margin: 0 auto;
@@ -126,6 +127,28 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.alert {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.alert-danger {
+  border: 1px solid #7f0000;
+  background-color: #b71c1c; 
+}
+
+.alert-success {
+  border: 1px solid #004f04;
+  background-color: #2e7c31;
 }
 
 @media (max-width: 370px) {

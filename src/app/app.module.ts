@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TableComponent } from './person/table/table.component';
+import { PersonTableComponent } from './person/person-table/person-table.component';
 import { AddPersonComponent } from './person/add-person/add-person.component';
 import { EditPersonComponent } from './person/edit-person/edit-person.component';
 import { DeletePersonComponent } from './person/delete-person/delete-person.component';
@@ -15,7 +15,7 @@ import { AlertModule } from './alert/alert.module';
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent,
+    PersonTableComponent,
     AddPersonComponent,
     EditPersonComponent,
     DeletePersonComponent

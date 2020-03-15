@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import { catchError, delay } from 'rxjs/operators';
-import { Person } from '../model/person';
+import { Person } from '../model/person.model';
 import { AlertService } from './alert.service';
 
 const URL = 'http://localhost:3004/persons';

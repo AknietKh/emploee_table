@@ -8,5 +8,6 @@
 
 .modal {
   min-width: 280px;
+  width: 50rem;
   font-size: 2rem;
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Input, Output, EventEmitter} from '@angular/core';
 import { HttpService } from '../../service/http.service';
-import { Person } from 'src/app/model/person';
+import { Person } from 'src/app/model/person.model';
 import { AlertService } from 'src/app/service/alert.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class DeletePersonComponent {
 
   onDelete(showModal: boolean) {
     this.httpService.deleteData(this.person.id).subscribe(
-      data => this.alertService.success('Успешно удалено', 5000),
+      data => this.alertService.success('Успешно удалено', 3000),
       err => console.log('deleteErr', err.message)
     );
     
