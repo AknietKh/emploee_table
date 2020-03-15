@@ -1,12 +1,6 @@
-html {
-  font-size: 10px;
-}
-
-.wrapper {
+/* .wrapper {
   width: 90%;
-  border: 1px solid red;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .person-table {
@@ -14,12 +8,12 @@ html {
   width: 100%;
   border-top: 1px solid black;
   border-collapse: collapse;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 2vh;
 }
 .person-table th {
-  background-color: #e3e6e4;
+  background-color: #e5ece759;
 }
 
 .person-table th,
@@ -45,12 +39,13 @@ html {
 
 .btn {
   min-width: 8%;
-  height: 6vh;
+  height: 5vh;
   border: none;
   border-radius: 5px;
   background-color: #2962ff;
   color: #fff;
   padding: 0 10px;
+  font-size: 1rem;
 }
 
 .btn-redact {
@@ -58,7 +53,7 @@ html {
   height: 3vw;
   min-height: 35px;
   border: 2px solid #c8a415;
-  background: url(../../assets/icon-redact-40.png) no-repeat 50% 50% #ffd54f;
+  background: url(../../../assets/icon-redact-40.png) no-repeat 50% 50% #ffd54f;
   background-size: contain;
   margin-right: 5px;
 }
@@ -74,4 +69,4 @@ html {
 .btn-delete::before {
   content: 'X';
   font-size: 200%;
-}
+} */

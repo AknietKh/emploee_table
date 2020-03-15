@@ -1,1 +1,141 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.person-table {
+  min-width: 25%;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.person-table th {
+  background-color: #e5ece759;
+}
+
+.person-table tr td:last-child {
+  width: 8%;
+}
+
+.person-table tr td:last-child div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.person-row {
+  height: 8vh;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.btn {
+  height: 4rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2962ff;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btn-redact {
+  min-width: 5rem;
+  height: 5rem;
+  border: 2px solid #c8a415;
+  background: url(./assets/icon-redact-40.png) no-repeat 50% 50% #ffd54f;
+  background-size: contain;
+  margin-right: 5px;
+  padding: 0;
+}
+
+.btn-delete {
+  min-width: 5rem;
+  height: 5rem;
+  background-color: #e53935;
+  border: 2px solid #ab000d;
+  padding: 0;
+}
+
+.btn-delete::before {
+  content: 'X';
+  font-size: 4rem;
+} 
+
+.modal-title {
+  background-color: #616161;
+  padding: 10px;
+  font-size: 2.4rem;
+  color: #fff;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-body {
+  height: 100%;
+  border: 1px solid black;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.modal-form .form-wrapper {
+  width: 100%;
+}
+
+.form-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 2rem;
+}
+
+.modal-delete-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 370px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,12 @@
+ :host {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   padding: 0 2rem;
+ }
+ 
+ .modal {
+  min-width: 280px;
+  font-size: 2rem;
+}

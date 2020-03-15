@@ -1,0 +1,34 @@
+<div class='modal'>
+  <div class='modal-title'>
+    <span>Создание сотрудника</span>
+  </div>
+
+  <div class="modal-body">
+    <a routerLink="" href='/'>Назад к списку</a>
+    <form [formGroup]='addForm'  (ngSubmit)='onSubmit()' class='modal-form'>
+      <div class='form-wrapper'>
+        <input
+          formControlName='firstName' 
+          class='form-input' 
+          type="text" 
+          placeholder="Введите имя сотрудника">
+        <div 
+          class="alert alert-danger"
+          *ngIf="addForm.controls['firstName'].invalid && addForm.controls['firstName'].touched">
+          Не указано имя
+        </div>
+        <input 
+          formControlName='lastName'
+          class='form-input' 
+          type="text" 
+          placeholder="Введите фамилию сотрудника">
+        <div 
+          class="alert alert-danger"
+          *ngIf="addForm.controls['lastName'].invalid && addForm.controls['lastName'].touched">
+          Фамилия не указана
+        </div>
+      </div>
+      <button class="btn" [disabled]='addForm.invalid' >Сохранить</button>
+    </form>
+  </div>
+</div>
