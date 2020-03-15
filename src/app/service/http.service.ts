@@ -5,7 +5,7 @@ import { catchError, delay } from 'rxjs/operators';
 import { Person } from '../model/person';
 import { AlertService } from './alert.service';
 
-const URL = 'http://localhost:3004/persons1';
+const URL = 'http://localhost:3004/persons';
 const httpOptions = {
   headers: new HttpHeaders().set("Content-Type", "application/json;charset=utf-8")
 }
