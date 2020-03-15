@@ -38,11 +38,21 @@
           class='form-input' 
           type="text" 
           placeholder="Введите имя сотрудника">
+        <div 
+          class="alert alert-danger"
+          *ngIf="editForm.controls['firstName'].invalid && editForm.controls['firstName'].touched">
+          Не указано имя
+        </div>
         <input
           formControlName='lastName' 
           class='form-input' 
           type="text" 
           placeholder="Введите фамилию сотрудника">
+        <div 
+          class="alert alert-danger"
+          *ngIf="editForm.controls['lastName'].invalid && editForm.controls['lastName'].touched">
+          Фамилия не указана
+        </div>
       </div>
       <button class="btn" [disabled]='editForm.invalid' >Сохранить</button>
     </form>
