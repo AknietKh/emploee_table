@@ -7,9 +7,8 @@ import { PersonTableComponent } from './person/person-table/person-table.compone
 import { AddPersonComponent } from './person/add-person/add-person.component';
 import { EditPersonComponent } from './person/edit-person/edit-person.component';
 import { DeletePersonComponent } from './person/delete-person/delete-person.component';
-import { HttpService } from './service/http.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModule } from './alert/alert.module';
 
 @NgModule({
@@ -24,11 +23,10 @@ import { AlertModule } from './alert/alert.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
     AlertModule
   ],
-  providers: [HttpService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

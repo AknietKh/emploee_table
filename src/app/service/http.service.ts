@@ -10,7 +10,9 @@ const httpOptions = {
   headers: new HttpHeaders().set("Content-Type", "application/json;charset=utf-8")
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HttpService {
   
   constructor(

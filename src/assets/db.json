@@ -36,19 +36,9 @@
       "lastName": "Ortiz"
     },
     {
-      "id": 8,
       "firstName": "Beach",
-      "lastName": "Lindsey"
-    },
-    {
-      "id": 9,
-      "firstName": "Gilbert",
-      "lastName": "Sanford"
-    },
-    {
-      "id": 10,
-      "firstName": "Julie",
-      "lastName": "Shepherd"
+      "lastName": "Lindsey",
+      "id": 8
     }
   ]
 }

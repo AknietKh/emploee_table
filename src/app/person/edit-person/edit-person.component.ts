@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute} from '@angular/router';
 import { HttpService } from '../../service/http.service';
@@ -13,9 +13,8 @@ import { AlertService } from 'src/app/service/alert.service';
 })
 export class EditPersonComponent implements OnInit {
   editForm: FormGroup;
-  // personId: number;
   persons: Person[];
-  curentPerson: Person;
+  personId: number;
 
   constructor(
     private httpService: HttpService,
@@ -23,18 +22,13 @@ export class EditPersonComponent implements OnInit {
     private activatedRoute: ActivatedRoute, 
     private formBuilder: FormBuilder,
     private alertService: AlertService
-  ) {
-    // this.personId = parseInt(route.snapshot.params['id']);
-  }
+  ) {}
 
   ngOnInit(): void {
-    // this.httpService.getData().subscribe(data => {
-    //   this.persons = data;
-    //   this.curentPerson = this.persons.filter(item => item.id === this.personId)[0];
-    // });
-    // this.httpService.getSomePerson(this.personId)
-    //   .subscribe(data => this.curentPerson = data)
-    this.getPerson(parseInt(this.activatedRoute.snapshot.params['id']));
+    this.personId = parseInt(this.activatedRoute.snapshot.params['id']);
+
+    this.getPerson(this.personId);
+
     this.editForm = this.formBuilder.group({
       'firstName': [null, Validators.required],
       'lastName': [null, Validators.required] 
@@ -44,8 +38,6 @@ export class EditPersonComponent implements OnInit {
   getPerson(id: number) {
     this.httpService.getSomePerson(id)
       .subscribe(data => {
-        this.curentPerson = data;
-        console.log(this.curentPerson);
         this.editForm.setValue({
           'firstName': data['firstName'],
           'lastName': data['lastName']
@@ -54,8 +46,8 @@ export class EditPersonComponent implements OnInit {
   }
 
   onSubmit(editForm: Person): void {
-    console.log(this.curentPerson.id, editForm);
-    this.httpService.editData(this.curentPerson.id, editForm)
+    console.log(this.personId, editForm);
+    this.httpService.editData(this.personId, editForm)
       .subscribe(data => {
         this.alertService.success("Редактирование прошло успешно", 3000);
       },

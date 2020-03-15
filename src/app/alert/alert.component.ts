@@ -24,7 +24,7 @@ export class AlertComponent implements OnInit, OnDestroy {
       }
 
       this.alerts.push(alert);
-      console.log(this.alerts);
+
       if(alert.delay) {
         setTimeout(() => this.removeAlert(alert), alert.delay);
       }
@@ -39,8 +39,6 @@ export class AlertComponent implements OnInit, OnDestroy {
     if (!this.alerts.includes(alert)) return;
 
     this.alerts = this.alerts.filter(item => item !== alert );
-    console.log(this.alerts);
-    console.log(alert.id);
   }
 
   cssClass(alert: Alert) {
