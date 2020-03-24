@@ -1,10 +1,7 @@
 # EmployeeSpreadsheet
+ EmployeeSpreadsheet - представляет из себя CRUD таблицу с toast notification. Реализован функционал добавления, удаления и редактирования Сотрудника в таблице и показываются уведомления (toast notification) при успешном или неудачном выполнении операции. Проект написан на Angular 9, для имитации запросов на сервер использовался [JSON server](https://github.com/typicode/json-server) (Fake REST API).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Start
 
@@ -14,3 +11,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Запустить проект: 
 #### `npm start`
+Запуск проекта по адрессу http://localhost:4200/
