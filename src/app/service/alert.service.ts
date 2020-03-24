@@ -19,11 +19,11 @@ export class AlertService {
   }
 
   success(message: string, delay: number | null = null ) {
-    this.alert(new Alert({message, delay, type: AlertType.Success}))
+    this.alert(new Alert({message, delay, type: AlertType.Success}));
   }
 
   error(message: string, delay: number | null = null ) {
-    this.alert(new Alert({message, delay, type: AlertType.Error}))
+    this.alert(new Alert({message, delay, type: AlertType.Error}));
   }
 
   clear() {

@@ -7,33 +7,32 @@ import { AlertService } from './alert.service';
 
 const URL = 'http://localhost:3004/persons';
 const httpOptions = {
-  headers: new HttpHeaders().set("Content-Type", "application/json;charset=utf-8")
-}
+  headers: new HttpHeaders().set('Content-Type', 'application/json;charset=utf-8')
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  
   constructor(
     private http: HttpClient,
     private alert: AlertService
-  ){}
+  ) { }
 
   errMessage(err) {
     let message: string;
-    switch(err.status) {
+    switch (err.status) {
       case 404:
-        message = `Сущность не найдена в системе. Ошибка: ${err.status}`
+        message = `Сущность не найдена в системе. Ошибка: ${err.status}`;
         break;
       case 400:
-        message =`Ошибка: ${err.status}. Неверный запрос`
+        message = `Ошибка: ${err.status}. Неверный запрос`;
         break;
-      case 500: 
-        message =`Ошибка: ${err.status}. Ошибка сервера, попроубйте позже.`
+      case 500:
+        message = `Ошибка: ${err.status}. Ошибка сервера, попроубйте позже.`;
         break;
       default:
-        message = `Произошла ошибка ${err.status}`
+        message = `Произошла ошибка ${err.status}`;
     }
 
     return message;
@@ -48,7 +47,7 @@ export class HttpService {
           this.alert.error(message);
           return throwError(err);
         })
-      )
+      );
   }
 
   getSomePerson(id: number): Observable<Person> {
@@ -60,7 +59,7 @@ export class HttpService {
           this.alert.error(message);
           return throwError(err);
         })
-      )
+      );
   }
 
   addData(person: Person): Observable<Person> {
@@ -72,10 +71,10 @@ export class HttpService {
         this.alert.error(message);
         return throwError(err);
       })
-    )
+    );
   }
 
-  editData(id:number, person: Person): Observable<Person> {
+  editData(id: number, person: Person): Observable<Person> {
     return this.http.put<Person>(`${URL}/${id}`, JSON.stringify(person), httpOptions)
       .pipe(
         catchError(err => {
@@ -84,7 +83,7 @@ export class HttpService {
           this.alert.error(message);
           return throwError(err);
         })
-      )
+      );
   }
 
   deleteData(id: number): Observable<any> {
@@ -96,6 +95,6 @@ export class HttpService {
           this.alert.error(message);
           return throwError(err);
         })
-      )
+      );
   }
 }

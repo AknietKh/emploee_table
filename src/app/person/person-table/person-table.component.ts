@@ -12,7 +12,7 @@ import { AlertService } from 'src/app/service/alert.service';
 
 export class PersonTableComponent implements OnInit {
   currentPerson: Person;
-  showDeleteModal: boolean = false;
+  showDeleteModal = false;
   persons: Person[];
 
   constructor(

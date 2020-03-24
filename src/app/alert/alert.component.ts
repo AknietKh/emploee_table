@@ -10,7 +10,7 @@ import { AlertService } from '../service/alert.service';
 })
 export class AlertComponent implements OnInit, OnDestroy {
 
-  alerts: Alert[] = []
+  alerts: Alert[] = [];
   alertSubscription: Subscription;
 
   constructor(
@@ -19,16 +19,17 @@ export class AlertComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.alertSubscription = this.alertService.onAlert().subscribe(alert => {
-      if(!alert.message) {
-        this.alerts = []
+      if (!alert.message) {
+        this.alerts = [];
       }
 
       this.alerts.push(alert);
 
-      if(alert.delay) {
+      if (alert.delay) {
         setTimeout(() => this.removeAlert(alert), alert.delay);
       }
-    })
+    });
+    console.log(this.alertSubscription);
   }
 
   ngOnDestroy(): void {
@@ -36,20 +37,24 @@ export class AlertComponent implements OnInit, OnDestroy {
   }
 
   removeAlert(alert: Alert) {
-    if (!this.alerts.includes(alert)) return;
+    if (!this.alerts.includes(alert)) {
+      return;
+    }
 
     this.alerts = this.alerts.filter(item => item !== alert );
   }
 
   cssClass(alert: Alert) {
-    if (!alert) return;
+    if (!alert) {
+      return;
+    }
 
     const classes = ['alert'];
 
     const AlertTypeClass =  {
       [AlertType.Success]: 'alert-success',
       [AlertType.Error]: 'alert-danger'
-    }
+    };
 
     classes.push(AlertTypeClass[alert.type]);
     return classes.join(' ');

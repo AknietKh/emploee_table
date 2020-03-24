@@ -20,8 +20,8 @@ export class AddPersonComponent {
     private alertService: AlertService
   ) {
     this.addForm = new FormGroup({
-      'firstName': new FormControl('', Validators.required),
-      'lastName': new FormControl('', Validators.required)
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required)
     });
   }
 
@@ -29,12 +29,12 @@ export class AddPersonComponent {
     this.httpService.addData(new Person(this.addForm.value.firstName, this.addForm.value.lastName ))
       .subscribe(
         data => {
-          this.alertService.success(`Сотрудник ${data.firstName} ${data.lastName} успешно добавлен`, 3000)
+          this.alertService.success(`Сотрудник ${data.firstName} ${data.lastName} успешно добавлен`, 3000);
         },
         err => {
           console.log('add-data', err.message);
         });
-    
+
     this.router.navigate(['']);
   }
 

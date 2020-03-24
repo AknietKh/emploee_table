@@ -4,7 +4,7 @@ export class Alert {
   delay?: number | null;
   id: number;
 
-  constructor(init?:Partial<Alert>) {
+  constructor(init?: Partial<Alert>) {
       Object.assign(this, init);
       this.id = Date.now();
   }

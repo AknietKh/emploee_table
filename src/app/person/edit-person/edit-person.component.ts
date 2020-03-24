@@ -19,42 +19,44 @@ export class EditPersonComponent implements OnInit {
   constructor(
     private httpService: HttpService,
     private router: Router,
-    private activatedRoute: ActivatedRoute, 
+    private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
-    this.personId = parseInt(this.activatedRoute.snapshot.params['id']);
+    console.log(this.activatedRoute);
+    const key = 'id';
+    this.personId = parseInt(this.activatedRoute.snapshot.params[key], 10);
 
     this.getPerson(this.personId);
 
     this.editForm = this.formBuilder.group({
-      'firstName': [null, Validators.required],
-      'lastName': [null, Validators.required] 
-    }) 
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required]
+    });
   }
 
   getPerson(id: number) {
     this.httpService.getSomePerson(id)
       .subscribe(data => {
         this.editForm.setValue({
-          'firstName': data['firstName'],
-          'lastName': data['lastName']
-        })
-      })
+          firstName: data.firstName,
+          lastName: data.lastName
+        });
+      });
   }
 
   onSubmit(editForm: Person): void {
     console.log(this.personId, editForm);
     this.httpService.editData(this.personId, editForm)
       .subscribe(data => {
-        this.alertService.success("Редактирование прошло успешно", 3000);
+        this.alertService.success('Редактирование прошло успешно', 3000);
       },
       err => {
-        console.log('edit', err.message)
+        console.log('edit', err.message);
       });
-    
+
     this.router.navigate(['']);
   }
 }

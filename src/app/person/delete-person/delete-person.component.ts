@@ -12,13 +12,13 @@ import { AlertService } from 'src/app/service/alert.service';
 export class DeletePersonComponent {
   @Input() person: Person;
   @Output() toggleModal = new EventEmitter<boolean>();
-  
+
   constructor(
     private httpService: HttpService,
     private alertService: AlertService
   ) { }
 
-  onCancel(showModal: boolean){
+  onCancel(showModal: boolean) {
     this.toggleModal.emit(showModal);
   }
 
@@ -27,7 +27,7 @@ export class DeletePersonComponent {
       data => this.alertService.success('Успешно удалено', 3000),
       err => console.log('deleteErr', err.message)
     );
-    
+
     this.toggleModal.emit(showModal);
   }
 }
