@@ -4,7 +4,7 @@
   "scripts": {
     "watch-db": "json-server --watch ./src/assets/db.json --port 3004",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration es5",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

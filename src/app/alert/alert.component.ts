@@ -37,7 +37,7 @@ export class AlertComponent implements OnInit, OnDestroy {
   }
 
   removeAlert(alert: Alert) {
-    if (!this.alerts.includes(alert)) {
+    if (this.alerts.indexOf(alert) === -1) {
       return;
     }
 
