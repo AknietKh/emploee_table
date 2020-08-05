@@ -6,27 +6,27 @@ import { Alert, AlertType } from '../model/alert.model';
   providedIn: 'root'
 })
 export class AlertService {
-  private subject = new Subject<Alert>();
+  private alerts = new Subject<Alert>();
 
   constructor() { }
 
-  onAlert() {
-    return this.subject.asObservable();
+  public getAlerts() {
+    return this.alerts;
   }
 
-  alert(alert: Alert) {
-    this.subject.next(alert);
+  private onAlert(alert: Alert) {
+    this.alerts.next(alert);
   }
 
-  success(message: string, delay: number | null = null ) {
-    this.alert(new Alert({message, delay, type: AlertType.Success}));
+  public success(message: string, delay: number | null = null ) {
+    this.onAlert(new Alert({message, delay, type: AlertType.Success}));
   }
 
-  error(message: string, delay: number | null = null ) {
-    this.alert(new Alert({message, delay, type: AlertType.Error}));
+  public error(message: string, delay: number | null = null ) {
+    this.onAlert(new Alert({message, delay, type: AlertType.Error}));
   }
 
-  clear() {
-    this.subject.next(new Alert());
+  public clear() {
+    this.alerts.next(new Alert());
   }
 }
