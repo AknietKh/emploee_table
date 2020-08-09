@@ -1,0 +1,36 @@
+<div class="modal-wrapper">
+  <div class='modal'>
+    <div class='modal-title'>
+      <span>{{ title }}</span>
+    </div>
+  
+    <div class="modal-body">
+      <button (click)="close()">Назад к списку</button>
+      <form [formGroup]='personForm' class='modal-form'>
+        <div class='form-wrapper'>
+          <input
+            formControlName='firstName' 
+            class='form-input' 
+            type="text" 
+            placeholder="Введите имя сотрудника">
+          <div 
+            class="alert alert-danger"
+            *ngIf="personForm.controls['firstName'].invalid && personForm.controls['firstName'].touched">
+            Не указано имя
+          </div>
+          <input 
+            formControlName='lastName'
+            class='form-input' 
+            type="text" 
+            placeholder="Введите фамилию сотрудника">
+          <div 
+            class="alert alert-danger"
+            *ngIf="personForm.controls['lastName'].invalid && personForm.controls['lastName'].touched">
+            Фамилия не указана
+          </div>
+        </div>
+        <button class="btn" type="button" (click)='confirm($event)'>{{ buttonText }}</button>
+      </form>
+    </div>
+  </div>
+</div>
