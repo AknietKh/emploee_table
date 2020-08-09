@@ -4,20 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonTableComponent } from './person/person-table/person-table.component';
-import { AddPersonComponent } from './person/add-person/add-person.component';
-import { EditPersonComponent } from './person/edit-person/edit-person.component';
-import { DeletePersonComponent } from './person/delete-person/delete-person.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModule } from './alert/alert.module';
+import { ModalComponent } from './modal/modal.component';
+import { ContainerRefDirective } from './container-ref.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonTableComponent,
-    AddPersonComponent,
-    EditPersonComponent,
-    DeletePersonComponent
+    ModalComponent,
+    ContainerRefDirective,
   ],
   imports: [
     BrowserModule,
