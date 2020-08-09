@@ -17,8 +17,8 @@ describe('ModalComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ModalComponent);
     component = fixture.componentInstance;
-    component.title = "title";
-    component.buttonText = "Сохранить";
+    component.title = 'title';
+    component.buttonText = 'Сохранить';
     component.person = {firstName: 'Akniet', lastName: 'Khakim'};
     component.type = ModalType.Add;
     fixture.detectChanges();
