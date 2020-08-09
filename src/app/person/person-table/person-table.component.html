@@ -13,21 +13,21 @@
         <td>{{person.lastName}}</td>
         <td>
           <div>
-            <button class='btn btn-redact' (click)='goEditPersonModal(person)'></button>
-            <button class='btn btn-delete' (click)='onDeleteBtn(person)'></button>
+            <button class='btn btn-redact' (click)='showModal(modalType.Edit, person)'></button>
+            <button class='btn btn-delete' (click)='showModal(modalType.Delete, person)'></button>
           </div>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <button class='btn btn-add' (click)='goAddPersonModal()'>Добавить сотрудника</button>
+  <button class='btn btn-add' (click)='showModal(modalType.Add)'>Добавить сотрудника</button>
 
-  <div class="modal-delete-wrapper" *ngIf='showDeleteModal'>
+  <!-- <div class="modal-delete-wrapper" *ngIf='showDeleteModal'>
     <app-delete-person 
     [person]='currentPerson'
     (toggleModal)='onToggleModal($event)'
-  ></app-delete-person>
-  </div>
-
+  ></app-delete-person> -->
+  <!-- </div> -->
+  <ng-template appContainerRef></ng-template>
 </div>
