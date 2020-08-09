@@ -92,9 +92,10 @@ html {
   backdrop-filter: blur(3px);
 }
 
-/* .modal {
-
-} */
+.modal {
+  width: 100%;
+  max-width: 600px;
+}
 
 .modal-title {
   background-color: #616161;
