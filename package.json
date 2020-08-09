@@ -2,12 +2,13 @@
   "name": "employee-spreadsheet",
   "version": "0.0.0",
   "scripts": {
-    "watch-db": "json-server --watch ./src/assets/db.json --port 3004",
+    "db": "json-server --watch ./src/assets/db.json --port 3004",
     "ng": "ng",
     "start": "ng serve --configuration es5",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "fix": "ng lint --fix",
     "e2e": "ng e2e"
   },
   "private": true,
