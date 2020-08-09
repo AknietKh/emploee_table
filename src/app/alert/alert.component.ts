@@ -10,8 +10,8 @@ import { AlertService } from '../service/alert.service';
 })
 export class AlertComponent implements OnInit, OnDestroy {
 
-  alerts: Alert[] = [];
-  alertSubscription: Subscription;
+  public alerts: Alert[] = [];
+  private alertSubscription: Subscription;
 
   constructor(
     private alertService: AlertService
@@ -35,7 +35,7 @@ export class AlertComponent implements OnInit, OnDestroy {
     this.alertSubscription.unsubscribe();
   }
 
-  removeAlert(alert: Alert) {
+  public removeAlert(alert: Alert) {
     if (this.alerts.indexOf(alert) === -1) {
       return;
     }
@@ -43,7 +43,7 @@ export class AlertComponent implements OnInit, OnDestroy {
     this.alerts = this.alerts.filter(item => item !== alert );
   }
 
-  cssClass(alert: Alert) {
+  public cssClass(alert: Alert) {
     if (!alert) {
       return;
     }
