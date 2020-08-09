@@ -12,7 +12,8 @@
             formControlName='firstName' 
             class='form-input' 
             type="text" 
-            placeholder="Введите имя сотрудника">
+            placeholder="Введите имя сотрудника"
+            [attr.disabled]="isDeleteModal()">
           <div 
             class="alert alert-danger"
             *ngIf="personForm.controls['firstName'].invalid && personForm.controls['firstName'].touched">
@@ -22,7 +23,8 @@
             formControlName='lastName'
             class='form-input' 
             type="text" 
-            placeholder="Введите фамилию сотрудника">
+            placeholder="Введите фамилию сотрудника"
+            [attr.disabled]="isDeleteModal()">
           <div 
             class="alert alert-danger"
             *ngIf="personForm.controls['lastName'].invalid && personForm.controls['lastName'].touched">

@@ -49,6 +49,10 @@ export class ModalComponent implements OnInit {
     this.modalService.confirm();
   }
 
+  public isDeleteModal() {
+    return this.type == ModalType.Delete ? 'disabled' : null;
+  }
+
   private onAddPerson(): void {
     this.modalService.setModalData({
       firstName: this.personForm.value.firstName.trim(),
